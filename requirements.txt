@@ -1,0 +1,20 @@
+torch
+torchvision
+torchaudio
+pymupdf
+pillow
+paddlepaddle
+paddleocr
+paddleclas
+pytesseract
+transformers
+black
+flake8
+isort
+loguru
+mkdocs
+pip
+python-dotenv
+tqdm
+typer
+-e .
