@@ -10,8 +10,8 @@ from transformers import (
     LayoutLMv3TokenizerFast,
 )
 
-from docai.engine import eval_fn, train_fn
-from docai.loader import (
+from docai.training.engine import eval_fn, train_fn
+from docai.datasets.loader import (
     LayoutLMv3Loader as Loader,
 )
 

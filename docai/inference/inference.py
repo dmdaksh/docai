@@ -12,7 +12,7 @@ from transformers import (
 )
 from transformers.tokenization_utils_base import BatchEncoding
 
-from docai.lmv3model import ModelModule  # Consider explicit imports for clarity.
+from docai.models.lmv3model import ModelModule  # Consider explicit imports for clarity.
 from docai.utils import (
     dataSetFormat,
     plot_img,

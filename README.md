@@ -95,24 +95,24 @@ Your training data should be provided in a JSON file. Each entry in the JSON sho
   - **box:** The bounding box coordinates in `[x1, y1, x2, y2]` format.
   - **label:** The classification label for the token.
 
-The utility function `train_data_format` in `docai/utils.py` converts the raw JSON data into the format required for training. Ensure that your JSON conforms to this structure.
+The utility function `train_data_format` in `docai/utils/utils.py` converts the raw JSON data into the format required for training. Ensure that your JSON conforms to this structure.
 
 ## Training the Model
 
-The training process fine-tunes the pretrained LayoutLMv3 model on your custom dataset. The training script (`docai/main.py`) uses Typer to enable configurable training parameters via the command line.
+The training process fine-tunes the pretrained LayoutLMv3 model on your custom dataset. The training script (`docai/training/main.py`) uses Typer to enable configurable training parameters via the command line.
 
 ### Running the Training Script
 
 You can run the training with default settings:
 
 ```bash
-python -m docai.main
+python -m docai.training.main
 ```
 
 To customize training parameters, specify options such as the number of epochs, batch size, learning rate, training JSON file path, and model save path:
 
 ```bash
-python -m docai.main \
+python -m docai.training.main \
   --epochs 5 \
   --batch_size 4 \
   --learning_rate 3e-5 \
@@ -138,14 +138,14 @@ During training, the script will:
 
 ## Inference
 
-After training, use the inference pipeline to process new documents. The inference code in `docai/inference.py` loads the fine-tuned model, processes an input image, and displays the image with overlaid bounding boxes, predicted labels, and probabilities.
+After training, use the inference pipeline to process new documents. The inference code in `docai/inference/inference.py` loads the fine-tuned model, processes an input image, and displays the image with overlaid bounding boxes, predicted labels, and probabilities.
 
 ### Running Inference
 
 Example command to run inference:
 
 ```bash
-python -m docai.inference --image_path path/to/image.png --model_path path/to/best_model.bin
+python -m docai.inference.inference --image_path path/to/image.png --model_path path/to/best_model.bin
 ```
 
 ## Contributing
